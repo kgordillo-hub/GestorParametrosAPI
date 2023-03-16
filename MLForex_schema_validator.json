@@ -1,0 +1,618 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "openapi": {
+      "type": "string"
+    },
+    "info": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email"
+          ]
+        },
+        "license": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "url"
+          ]
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "contact",
+        "license",
+        "version"
+      ]
+    },
+    "servers": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "description"
+          ]
+        }
+      ]
+    },
+    "paths": {
+      "type": "object",
+      "properties": {
+        "/trainModel": {
+          "type": "object",
+          "properties": {
+            "post": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "requestBody": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "object",
+                      "properties": {
+                        "application/json": {
+                          "type": "object",
+                          "properties": {
+                            "schema": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "$ref"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "schema"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "application/json"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "content"
+                  ]
+                },
+                "responses": {
+                  "type": "object",
+                  "properties": {
+                    "200": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "description"
+                      ]
+                    },
+                    "415": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "description"
+                      ]
+                    },
+                    "500": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "200",
+                    "415",
+                    "500"
+                  ]
+                }
+              },
+              "required": [
+                "description",
+                "requestBody",
+                "responses"
+              ]
+            }
+          },
+          "required": [
+            "post"
+          ]
+        },
+        "/predict": {
+          "type": "object",
+          "properties": {
+            "post": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "requestBody": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "object",
+                      "properties": {
+                        "application/json": {
+                          "type": "object",
+                          "properties": {
+                            "schema": {
+                              "type": "object",
+                              "properties": {
+                                "$ref": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "$ref"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "schema"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "application/json"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "content"
+                  ]
+                },
+                "responses": {
+                  "type": "object",
+                  "properties": {
+                    "200": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "object",
+                          "properties": {
+                            "application/json": {
+                              "type": "object",
+                              "properties": {
+                                "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                    "$ref": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "$ref"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "schema"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "application/json"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "description",
+                        "content"
+                      ]
+                    },
+                    "405": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "description"
+                      ]
+                    },
+                    "415": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "description"
+                      ]
+                    },
+                    "500": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "200",
+                    "405",
+                    "415",
+                    "500"
+                  ]
+                }
+              },
+              "required": [
+                "description",
+                "requestBody",
+                "responses"
+              ]
+            }
+          },
+          "required": [
+            "post"
+          ]
+        }
+      },
+      "required": [
+        "/trainModel",
+        "/predict"
+      ]
+    },
+    "components": {
+      "type": "object",
+      "properties": {
+        "schemas": {
+          "type": "object",
+          "properties": {
+            "TrainingInfo": {
+              "type": "object",
+              "properties": {
+                "required": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "type": {
+                  "type": "string"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "closing_price": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "number"
+                            }
+                          ]
+                        },
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example",
+                        "items"
+                      ]
+                    },
+                    "dates": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example",
+                        "items"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "closing_price",
+                    "dates"
+                  ]
+                }
+              },
+              "required": [
+                "required",
+                "type",
+                "properties"
+              ]
+            },
+            "PredictInfo": {
+              "type": "object",
+              "properties": {
+                "required": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "type": {
+                  "type": "string"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "days_to_predict": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "days_to_predict"
+                  ]
+                }
+              },
+              "required": [
+                "required",
+                "type",
+                "properties"
+              ]
+            },
+            "PredictResponse": {
+              "type": "object",
+              "properties": {
+                "required": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "type": {
+                  "type": "string"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "Predicted_values": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "number"
+                            }
+                          ]
+                        },
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example",
+                        "items"
+                      ]
+                    },
+                    "Dates": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example",
+                        "items"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Predicted_values",
+                    "Dates"
+                  ]
+                }
+              },
+              "required": [
+                "required",
+                "type",
+                "properties"
+              ]
+            }
+          },
+          "required": [
+            "TrainingInfo",
+            "PredictInfo",
+            "PredictResponse"
+          ]
+        }
+      },
+      "required": [
+        "schemas"
+      ]
+    }
+  },
+  "required": [
+    "openapi",
+    "info",
+    "servers",
+    "paths",
+    "components"
+  ]
+}

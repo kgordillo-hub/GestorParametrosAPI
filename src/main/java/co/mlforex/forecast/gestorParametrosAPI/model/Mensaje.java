@@ -1,18 +1,32 @@
-package co.mlforex.forecast.model;
+package co.mlforex.forecast.gestorParametrosAPI.model;
 
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTyped;
 
 import java.io.Serializable;
 
+@DynamoDBDocument
 public class Mensaje implements Serializable {
 
+    @DynamoDBAttribute
     private String linkRepo;
+    @DynamoDBAttribute
     private String branchRepoName;
+    @DynamoDBAttribute
     private String lastCommitHash;
+    @DynamoDBAttribute
     private String idUsuario;
-    private String openAPIFileLink;
+    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.BOOL)
+    @DynamoDBAttribute
     private Boolean openAPIFileCorrect;
-    private JSONObject openAPIFileContent;
+    @DynamoDBAttribute
+    private String openAPIFileContent;
+
+    public Mensaje(){
+
+    }
 
     public String getLinkRepo() {
         return linkRepo;
@@ -46,13 +60,6 @@ public class Mensaje implements Serializable {
         this.idUsuario = idUsuario;
     }
 
-    public String getOpenAPIFileLink() {
-        return openAPIFileLink;
-    }
-
-    public void setOpenAPIFileLink(String openAPIFileLink) {
-        this.openAPIFileLink = openAPIFileLink;
-    }
 
     public Boolean getOpenAPIFileCorrect() {
         return openAPIFileCorrect;
@@ -62,11 +69,11 @@ public class Mensaje implements Serializable {
         this.openAPIFileCorrect = openAPIFileCorrect;
     }
 
-    public JSONObject getOpenAPIFileContent() {
+    public String getOpenAPIFileContent() {
         return openAPIFileContent;
     }
 
-    public void setOpenAPIFileContent(JSONObject openAPIFileContent) {
+    public void setOpenAPIFileContent(String openAPIFileContent) {
         this.openAPIFileContent = openAPIFileContent;
     }
 }
