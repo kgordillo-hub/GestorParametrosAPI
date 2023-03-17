@@ -35,7 +35,13 @@ public class GestorParamController {
 
     @PostMapping("/getAPIConfig")
     public ResponseEntity<TransaccionInfo> getAPIConfig(@RequestBody TransaccionInfo transacInfo) {
-        TransaccionInfo msg = servicioGestorParamAPI.getParametrosAPI(transacInfo);
-        return new ResponseEntity<>(msg, HttpStatus.OK);
+        try{
+            TransaccionInfo msg = servicioGestorParamAPI.getParametrosAPI(transacInfo);
+            return new ResponseEntity<>(msg, HttpStatus.OK);
+
+        }catch(final Exception e){
+            logger.error("Error en GestorParamController:getAPIConfig " + e.getMessage());
+            return new ResponseEntity<>(new TransaccionInfo(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

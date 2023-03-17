@@ -76,11 +76,8 @@ public class ServicioGestorParamAPIImp implements ServicioGestorParamAPI {
 
     @Override
     public TransaccionInfo getParametrosAPI(TransaccionInfo transacInfo) {
-        Optional<TransaccionInfo> value = gestorParamRepo.findById(transacInfo.getMensaje().getLinkRepo());
-        if (!value.isEmpty())
-            return value.get();
-        else
-            return null;
+        TransaccionInfo value = findByAppV(transacInfo);
+        return value;
     }
 
     private TransaccionInfo findByAppV(TransaccionInfo transaccionInfo) {
