@@ -344,6 +344,9 @@
                     },
                     {
                       "type": "string"
+                    },
+                    {
+                      "type": "string"
                     }
                   ]
                 },
@@ -353,86 +356,60 @@
                 "properties": {
                   "type": "object",
                   "properties": {
-                    "closing_price": {
+                    "data": {
                       "type": "object",
                       "properties": {
                         "type": {
                           "type": "string"
                         },
-                        "example": {
-                          "type": "array",
-                          "items": [
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "number"
-                            }
-                          ]
+                        "description": {
+                          "type": "string"
                         },
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "type"
-                          ]
+                        "example": {
+                          "type": "string"
                         }
                       },
                       "required": [
                         "type",
-                        "example",
-                        "items"
+                        "description",
+                        "example"
                       ]
                     },
-                    "dates": {
+                    "endpoint_notificacion": {
                       "type": "object",
                       "properties": {
                         "type": {
                           "type": "string"
                         },
                         "example": {
-                          "type": "array",
-                          "items": [
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "string"
-                            }
-                          ]
-                        },
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "type"
-                          ]
+                          "type": "string"
                         }
                       },
                       "required": [
                         "type",
-                        "example",
-                        "items"
+                        "example"
+                      ]
+                    },
+                    "UID": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example"
                       ]
                     }
                   },
                   "required": [
-                    "closing_price",
-                    "dates"
+                    "data",
+                    "endpoint_notificacion",
+                    "UID"
                   ]
                 }
               },
@@ -448,6 +425,12 @@
                 "required": {
                   "type": "array",
                   "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    },
                     {
                       "type": "string"
                     }
@@ -473,10 +456,42 @@
                         "type",
                         "example"
                       ]
+                    },
+                    "endpoint_notificacion": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example"
+                      ]
+                    },
+                    "UID": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "example": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "example"
+                      ]
                     }
                   },
                   "required": [
-                    "days_to_predict"
+                    "days_to_predict",
+                    "endpoint_notificacion",
+                    "UID"
                   ]
                 }
               },
@@ -494,9 +509,6 @@
                   "items": [
                     {
                       "type": "string"
-                    },
-                    {
-                      "type": "string"
                     }
                   ]
                 },
@@ -506,86 +518,28 @@
                 "properties": {
                   "type": "object",
                   "properties": {
-                    "Predicted_values": {
+                    "result": {
                       "type": "object",
                       "properties": {
                         "type": {
                           "type": "string"
                         },
-                        "example": {
-                          "type": "array",
-                          "items": [
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "number"
-                            }
-                          ]
-                        },
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "type"
-                          ]
-                        }
-                      },
-                      "required": [
-                        "type",
-                        "example",
-                        "items"
-                      ]
-                    },
-                    "Dates": {
-                      "type": "object",
-                      "properties": {
-                        "type": {
+                        "description": {
                           "type": "string"
                         },
                         "example": {
-                          "type": "array",
-                          "items": [
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "string"
-                            }
-                          ]
-                        },
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "type"
-                          ]
+                          "type": "string"
                         }
                       },
                       "required": [
                         "type",
-                        "example",
-                        "items"
+                        "description",
+                        "example"
                       ]
                     }
                   },
                   "required": [
-                    "Predicted_values",
-                    "Dates"
+                    "result"
                   ]
                 }
               },
